@@ -1,0 +1,8 @@
+.guestInputForm {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  height: 500px;
+  border: black 2px solid;
+}
