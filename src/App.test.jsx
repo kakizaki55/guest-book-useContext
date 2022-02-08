@@ -37,6 +37,9 @@ test('just doing some behavior tests on my App', () => {
 
   userEvent.click(signButton);
 
+  const logoutButton = screen.getByRole('button', { name: /not tom nook?/i });
+  expect(logoutButton).toBeInTheDocument();
+
   const newCommentCard = screen.getByRole('heading', {
     name: /hello my name is tom nook/i,
   });
