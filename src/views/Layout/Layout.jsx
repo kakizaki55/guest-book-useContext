@@ -1,10 +1,11 @@
 import React from 'react';
 import Home from '../Home/Home';
+import Header from '../../components/Layout/Header';
 
 export default function Layout() {
   return (
     <div>
-      <header>this is the header</header>
+      <Header />
       <Home />
       <footer>this is the footer</footer>
     </div>

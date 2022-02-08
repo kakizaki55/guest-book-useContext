@@ -7,9 +7,11 @@ export default function GuestInputForm() {
   const [name, setName] = useState();
   const [guestEntry, setGuestEntry] = useState();
   const { user, setUser } = useUser();
+  console.log(name, user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setUser(name);
   };
 
   return (
