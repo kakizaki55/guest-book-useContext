@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function GuestInputForm() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const { entries, setEntries } = useEntires();
 
   const handleSubmit = (e) => {

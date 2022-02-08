@@ -3,7 +3,9 @@ import { useState, createContext, useContext } from 'react';
 const EntriesContext = createContext();
 
 export const EntriesProvider = ({ children }) => {
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState([
+    { name: 'minoka', entry: 'hello world' },
+  ]);
 
   const providerValue = { entries, setEntries };
   return (
