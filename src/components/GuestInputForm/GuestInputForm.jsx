@@ -7,15 +7,18 @@ import { useState } from 'react';
 export default function GuestInputForm() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
   const { entries, setEntries } = useEntires();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleUpdating = () => {
     setUser(name);
     setEntries([...entries, { name: name, entry: guestEntry }]);
   };
-  console.log(entries);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleUpdating();
+  };
 
   return (
     <div>
@@ -35,6 +38,7 @@ export default function GuestInputForm() {
             }}
           />
         </label>
+
         <label>
           Entry :
           <textarea

@@ -3,7 +3,7 @@ import { useState, createContext, useContext } from 'react';
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState('minoka');
 
   const providerValue = { user, setUser };
   return (

@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useMemo } from 'react';
 
 const EntriesContext = createContext();
 
@@ -8,6 +8,7 @@ export const EntriesProvider = ({ children }) => {
   ]);
 
   const providerValue = { entries, setEntries };
+
   return (
     <EntriesContext.Provider value={providerValue}>
       {children}
@@ -18,9 +19,7 @@ export const EntriesProvider = ({ children }) => {
 export const useEntires = () => {
   const entries = useContext(EntriesContext);
   if (entries === 'undefined') {
-    throw new Error(
-      ' useEntries must be warped in a EntriesProvider component'
-    );
+    throw new Error('useEntries must be warped in a EntriesProvider component');
   }
 
   return entries;
