@@ -1,18 +1,21 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
+import { useEntires } from '../../context/EntriesContext';
 import style from './GuestInputForm.css';
 import { useState } from 'react';
 
 export default function GuestInputForm() {
-  const [name, setName] = useState();
-  const [guestEntry, setGuestEntry] = useState();
+  const [name, setName] = useState('');
+  const [guestEntry, setGuestEntry] = useState('');
   const { user, setUser } = useUser();
-  console.log(name, user);
+  const { entries, setEntries } = useEntires();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(name);
+    setEntries([...entries, { name: name, entry: guestEntry }]);
   };
+  console.log(entries);
 
   return (
     <div>
