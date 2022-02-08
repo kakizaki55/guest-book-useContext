@@ -9,7 +9,7 @@ export default function GuestEntriesList() {
   return (
     <div className={style.guestEntriesList}>
       {entries.map((entry) => (
-        <GuestEntry {...entry} />
+        <GuestEntry {...entry} key={entry.id} />
       ))}
     </div>
   );

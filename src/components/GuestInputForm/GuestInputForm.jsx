@@ -12,7 +12,12 @@ export default function GuestInputForm() {
 
   const handleUpdating = () => {
     setUser(name);
-    setEntries([...entries, { name: name, entry: guestEntry }]);
+    setEntries([
+      ...entries,
+      { name: name, entry: guestEntry, id: entries.length },
+    ]);
+    setName('');
+    setGuestEntry('');
   };
 
   const handleSubmit = (e) => {
