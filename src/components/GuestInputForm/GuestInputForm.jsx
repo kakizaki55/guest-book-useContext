@@ -32,6 +32,7 @@ export default function GuestInputForm() {
   return (
     <>
       <div>
+        <h1>Leave a comment about your week!</h1>
         <form
           className={style.form}
           onSubmit={(e) => {
