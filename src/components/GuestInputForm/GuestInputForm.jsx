@@ -16,7 +16,7 @@ export default function GuestInputForm() {
       ...entries,
       { name: name, entry: guestEntry, id: entries.length },
     ]);
-    setName('');
+
     setGuestEntry('');
   };
 
@@ -24,38 +24,47 @@ export default function GuestInputForm() {
     e.preventDefault();
     handleUpdating();
   };
+  const handleLogout = () => {
+    setUser('');
+    setName('');
+  };
 
   return (
-    <div>
-      <form
-        className={style.form}
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        <label>
-          Guest Name :
-          <input
-            value={name}
-            type="text"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-        </label>
+    <>
+      <div>
+        <form
+          className={style.form}
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          {user ? null : (
+            <label>
+              Guest Name :
+              <input
+                value={name}
+                type="text"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+            </label>
+          )}
 
-        <label>
-          Entry :
-          <textarea
-            value={guestEntry}
-            type="text"
-            onChange={(e) => {
-              setGuestEntry(e.target.value);
-            }}
-          />
-        </label>
-        <button>Sign</button>
-      </form>
-    </div>
+          <label>
+            Entry :
+            <textarea
+              value={guestEntry}
+              type="text"
+              onChange={(e) => {
+                setGuestEntry(e.target.value);
+              }}
+            />
+          </label>
+          <button>Sign</button>
+          {user ? <button onClick={handleLogout}>not {user}?</button> : <></>}
+        </form>
+      </div>
+    </>
   );
 }
