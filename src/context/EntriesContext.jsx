@@ -4,9 +4,7 @@ import { fetchEntryList } from '../services/fetch';
 const EntriesContext = createContext();
 
 export const EntriesProvider = ({ children }) => {
-  const [entries, setEntries] = useState([
-    { name: 'minoka', entry: 'hello world', id: 0 },
-  ]);
+  const [entries, setEntries] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchEntryList();

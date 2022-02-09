@@ -5,4 +5,7 @@ export const fetchEntryList = async () => {
   return checkError(response);
 };
 
-export const updateEntryList = async (newEntry) => {};
+export const updateEntryList = async (newEntry) => {
+  const response = await client.from('weekly').insert([newEntry]);
+  return checkError(response);
+};

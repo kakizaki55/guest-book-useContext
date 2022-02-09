@@ -3,6 +3,7 @@ import { useUser } from '../../context/UserContext';
 import { useEntires } from '../../context/EntriesContext';
 import style from './GuestInputForm.css';
 import { useState } from 'react';
+import { updateEntryList } from '../../services/fetch';
 
 export default function GuestInputForm() {
   const [name, setName] = useState('');
@@ -12,10 +13,7 @@ export default function GuestInputForm() {
 
   const handleUpdating = () => {
     setUser(name);
-    setEntries([
-      ...entries,
-      { name: name, entry: guestEntry, id: entries.length },
-    ]);
+    setEntries([...entries, { name: name, entry: guestEntry }]);
 
     setGuestEntry('');
   };
@@ -23,6 +21,8 @@ export default function GuestInputForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleUpdating();
+    const newEntry = { name: name, entry: guestEntry };
+    updateEntryList(newEntry);
   };
   const handleLogout = () => {
     setUser('');

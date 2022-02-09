@@ -8,7 +8,7 @@ import userEvent from '@testing-library/user-event';
 
 dotenv.config();
 
-test('just doing some behavior tests on my App', () => {
+test.skip('just doing some behavior tests on my App', () => {
   render(
     <EntriesProvider>
       <UserProvider>
