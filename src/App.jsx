@@ -1,10 +1,13 @@
 import { UserProvider } from './context/UserContext';
 import Layout from './views/Layout/Layout';
+import { ToggleProvider } from './context/ToggleContext';
 
 export default function App() {
   return (
-    <UserProvider>
-      <Layout />
-    </UserProvider>
+    <ToggleProvider>
+      <UserProvider>
+        <Layout />
+      </UserProvider>
+    </ToggleProvider>
   );
 }
