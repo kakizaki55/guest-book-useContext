@@ -1,0 +1,7 @@
+.guestEntry {
+  width: 200px;
+  height: 100px;
+  border: black solid 2px;
+  text-align: center;
+  margin: 20px;
+}

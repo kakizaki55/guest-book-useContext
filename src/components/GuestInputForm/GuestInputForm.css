@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+label {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
