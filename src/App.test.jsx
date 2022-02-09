@@ -1,8 +1,11 @@
+import dotenv from 'dotenv';
+
 import App from './App';
 import { render, screen } from '@testing-library/react';
 import { UserProvider } from './context/UserContext';
 import { EntriesProvider } from './context/EntriesContext';
 import userEvent from '@testing-library/user-event';
+dotenv.config();
 
 test('just doing some behavior tests on my App', () => {
   render(
