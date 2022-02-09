@@ -5,15 +5,17 @@ const EntriesContext = createContext();
 
 export const EntriesProvider = ({ children }) => {
   const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchEntryList();
       console.log(data);
       setEntries(data);
+      setLoading(false);
     };
     fetchData();
-  }, []);
-  const providerValue = { entries, setEntries };
+  }, [loading]);
+  const providerValue = { entries, setEntries, setLoading };
 
   return (
     <EntriesContext.Provider value={providerValue}>
