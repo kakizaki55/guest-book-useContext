@@ -9,7 +9,6 @@ export const EntriesProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchEntryList();
-      console.log(data);
       setEntries(data);
       setLoading(false);
     };
