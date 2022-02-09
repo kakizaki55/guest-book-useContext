@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { UserProvider } from './context/UserContext';
 import { EntriesProvider } from './context/EntriesContext';
 import userEvent from '@testing-library/user-event';
-import { supabase } from './utils/settings.js';
 
 test('just doing some behavior tests on my App', () => {
   render(

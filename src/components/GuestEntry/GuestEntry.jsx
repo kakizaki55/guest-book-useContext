@@ -9,6 +9,7 @@ export default function ({ name, entry, id }) {
     deleteEntryById(id);
     setLoading(true);
   };
+
   return (
     <>
       <div className={style.guestEntry}>
