@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useAnimationTimer(duration = 1000, delay = 0) {
+function useAnimationTimer(duration = 3000, delay = 0) {
   const [elapsed, setTime] = useState(0);
   useEffect(
     () => {
