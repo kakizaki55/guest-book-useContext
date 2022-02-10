@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
-import { supabase } from '../utils/settings';
+import { subbase } from '../utils/settings';
 export const client = createClient(
-  process.env.REACT_APP_SUPABASE_URL || supabase.URL,
-  process.env.REACT_APP_SUPABASE_KEY || supabase.KEY
+  process.env.REACT_APP_SUPABASE_URL || subbase.URL,
+  process.env.REACT_APP_SUPABASE_KEY || subbase.KEY
 );
 
 export function checkError({ data, error }) {
