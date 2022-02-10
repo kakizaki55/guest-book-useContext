@@ -4,12 +4,15 @@ import { useEntires } from '../../context/EntriesContext';
 import style from './GuestInputForm.css';
 import { useState } from 'react';
 import { updateEntryList } from '../../services/fetch';
+import { useToggle } from '../../context/ToggleContext';
 
 export default function GuestInputForm() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
   const { user, setUser } = useUser();
   const { entries, setEntries } = useEntires();
+
+  const { darkMode } = useToggle();
 
   const handleUpdating = () => {
     setUser(name);
@@ -62,8 +65,17 @@ export default function GuestInputForm() {
               }}
             />
           </label>
-          <button>Sign</button>
-          {user ? <button onClick={handleLogout}>not {user}?</button> : <></>}
+          <button className={darkMode ? style.darkmode : null}>Sign</button>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className={darkMode ? style.darkmode : null}
+            >
+              not {user}?
+            </button>
+          ) : (
+            <></>
+          )}
         </form>
       </div>
     </>
