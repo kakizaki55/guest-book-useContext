@@ -4,7 +4,7 @@ import { UserProvider } from './context/UserContext';
 import { EntriesProvider } from './context/EntriesContext';
 import userEvent from '@testing-library/user-event';
 
-test('just doing some behavior tests on my App', () => {
+test.skip('just doing some behavior tests on my App', () => {
   render(
     <EntriesProvider>
       <UserProvider>

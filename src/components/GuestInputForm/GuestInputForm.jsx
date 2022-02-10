@@ -52,24 +52,24 @@ export default function GuestInputForm() {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Ball
-          innerStyle={{
-            marginTop: animation1 * 200 - 100,
-          }}
-        />
-        <Ball
-          innerStyle={{
-            marginTop: animation2 * 200 - 100,
-          }}
-        />
-        <Ball
-          innerStyle={{
-            marginTop: animation3 * 200 - 100,
-          }}
-        />
-      </div>
       <div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Ball
+            innerStyle={{
+              marginTop: animation1 * 200 - 100,
+            }}
+          />
+          <Ball
+            innerStyle={{
+              marginTop: animation2 * 200 - 100,
+            }}
+          />
+          <Ball
+            innerStyle={{
+              marginTop: animation3 * 200 - 100,
+            }}
+          />
+        </div>
         <h1>Leave a comment about your week!</h1>
         <form
           className={style.form}
