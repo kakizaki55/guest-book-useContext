@@ -33,9 +33,9 @@ export default function GuestInputForm() {
     setName('');
   };
 
-  const animation1 = useAnimation('elastic', 2000, 0);
-  const animation2 = useAnimation('elastic', 2000, 150);
-  const animation3 = useAnimation('elastic', 2000, 300);
+  const animation1 = useAnimation('elastic', 5000, 100);
+  const animation2 = useAnimation('elastic', 3000, 150);
+  const animation3 = useAnimation('elastic', 4000, 300);
 
   return (
     <>

@@ -10,6 +10,7 @@ export const EntriesProvider = ({ children }) => {
     const fetchData = async () => {
       const data = await fetchEntryList();
       setEntries(data);
+      console.log(data);
       setLoading(false);
     };
     fetchData();
