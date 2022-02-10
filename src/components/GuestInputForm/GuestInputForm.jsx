@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { updateEntryList } from '../../services/fetch';
 import { useToggle } from '../../context/ToggleContext';
 import { useAnimation } from '../../hooks/Animation';
+import { Ball } from '../Ball/Ball';
 
 export default function GuestInputForm() {
   const [name, setName] = useState('');
@@ -18,7 +19,6 @@ export default function GuestInputForm() {
   const handleUpdating = () => {
     setUser(name);
     setEntries([...entries, { name: name, entry: guestEntry }]);
-
     setGuestEntry('');
   };
 
@@ -36,19 +36,6 @@ export default function GuestInputForm() {
   const animation1 = useAnimation('elastic', 2000, 0);
   const animation2 = useAnimation('elastic', 2000, 150);
   const animation3 = useAnimation('elastic', 2000, 300);
-
-  const Ball = ({ innerStyle }) => (
-    <div
-      style={{
-        width: 100,
-        height: 100,
-        marginRight: '40px',
-        borderRadius: '50px',
-        backgroundColor: '#4dd5fa',
-        ...innerStyle,
-      }}
-    />
-  );
 
   return (
     <>

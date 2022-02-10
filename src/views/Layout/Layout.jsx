@@ -10,7 +10,7 @@ export default function Layout() {
     <div className={darkMode ? style.darkmode : null}>
       <Header />
       <Home />
-      <footer>this is the footer</footer>
+      <footer>Hope you had a good week!</footer>
     </div>
   );
 }
