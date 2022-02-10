@@ -5,6 +5,7 @@ import style from './GuestInputForm.css';
 import { useState } from 'react';
 import { updateEntryList } from '../../services/fetch';
 import { useToggle } from '../../context/ToggleContext';
+import { useAnimation } from '../../hooks/Animation';
 
 export default function GuestInputForm() {
   const [name, setName] = useState('');
@@ -32,8 +33,42 @@ export default function GuestInputForm() {
     setName('');
   };
 
+  const animation1 = useAnimation('elastic', 600, 0);
+  const animation2 = useAnimation('elastic', 600, 150);
+  const animation3 = useAnimation('elastic', 600, 300);
+
+  const Ball = ({ innerStyle }) => (
+    <div
+      style={{
+        width: 100,
+        height: 100,
+        marginRight: '40px',
+        borderRadius: '50px',
+        backgroundColor: '#4dd5fa',
+        ...innerStyle,
+      }}
+    />
+  );
+
   return (
     <>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Ball
+          innerStyle={{
+            marginTop: animation1 * 200 - 100,
+          }}
+        />
+        <Ball
+          innerStyle={{
+            marginTop: animation2 * 200 - 100,
+          }}
+        />
+        <Ball
+          innerStyle={{
+            marginTop: animation3 * 200 - 100,
+          }}
+        />
+      </div>
       <div>
         <h1>Leave a comment about your week!</h1>
         <form
@@ -46,6 +81,7 @@ export default function GuestInputForm() {
             <label>
               Guest Name :
               <input
+                required
                 value={name}
                 type="text"
                 onChange={(e) => {
@@ -58,6 +94,7 @@ export default function GuestInputForm() {
           <label>
             Entry :
             <textarea
+              required
               value={guestEntry}
               type="text"
               onChange={(e) => {

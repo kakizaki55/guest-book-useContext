@@ -11,7 +11,7 @@ export default function Header() {
     <>
       <div>welcome {user}</div>
       <button onClick={toggle} className={darkMode ? style.darkmode : null}>
-        {darkMode ? 'Toggled' : 'Click to Toggle'}
+        {darkMode ? 'LightMode' : 'Dark Made'}
       </button>
     </>
   );
