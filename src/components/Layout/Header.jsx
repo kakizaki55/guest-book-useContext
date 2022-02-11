@@ -8,11 +8,11 @@ export default function Header() {
   const { darkMode, toggle } = useToggle();
 
   return (
-    <>
+    <div className={style.header}>
       <div>welcome {user}</div>
       <button onClick={toggle} className={darkMode ? style.darkmode : null}>
         {darkMode ? 'LightMode' : 'Dark Made'}
       </button>
-    </>
+    </div>
   );
 }
