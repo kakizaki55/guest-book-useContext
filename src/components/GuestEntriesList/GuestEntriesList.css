@@ -1,0 +1,6 @@
+.guestEntriesList {
+  overflow-x: auto;
+  height: 600px;
+  border: black solid 2px;
+  width: 330px;
+}

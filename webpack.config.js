@@ -32,6 +32,9 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: 'public' }],
     }),
+    new webpack.DefinePlugin({
+      process: { env: {} },
+    }),
     new webpack.ProvidePlugin({
       React: 'react',
     }),
