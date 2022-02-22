@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react';
-import userInfo from '../utils/settings';
+import { userInfo } from '../utils/settings.js';
 
 const UserContext = createContext();
 export const UserProvider = ({ children }) => {
@@ -7,11 +7,13 @@ export const UserProvider = ({ children }) => {
 
   const login = (email, password) => {
     if (
-      email === (process.env.REACT_APP_AUTH_EMAIL || userInfo.email) &&
-      password === (process.env.REACT_APP_AUTH_PASSWORD || userInfo.password)
+      email === (process.env.REACT_APP_AUTH_EMAIL || userInfo.emailCheck) &&
+      password ===
+        (process.env.REACT_APP_AUTH_PASSWORD || userInfo.passwordCheck)
     ) {
       setUser(email);
       return true;
+      a;
     } else {
       return false;
     }

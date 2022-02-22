@@ -4,6 +4,6 @@ export const supabase = {
 };
 
 export const userInfo = {
-  email: 'minoka@gmail.com',
-  password: '1234'
-}
+  emailCheck: 'minoka@gmail.com',
+  passwordCheck: '1234',
+};
