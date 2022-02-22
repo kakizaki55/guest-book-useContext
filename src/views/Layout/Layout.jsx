@@ -5,6 +5,7 @@ import { useToggle } from '../../context/ToggleContext';
 import style from './Layout.css';
 import Login from '../Login/Login';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 
 export default function Layout() {
   const { darkMode } = useToggle();
@@ -16,9 +17,9 @@ export default function Layout() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/">
+          <PrivateRoute path="/">
             <Home />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
       <footer>Hope you had a good week!</footer>
