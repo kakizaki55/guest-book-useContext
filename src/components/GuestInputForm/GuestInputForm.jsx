@@ -11,27 +11,25 @@ import { Ball } from '../Ball/Ball';
 export default function GuestInputForm() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { user, setUser } = useUser();
+  const { user, logout } = useUser();
   const { entries, setEntries, setLoading } = useEntires();
 
   const { darkMode } = useToggle();
 
   const handleUpdating = () => {
     setLoading(true);
-    setUser(name);
-    setEntries([...entries, { name: name, entry: guestEntry }]);
+    setEntries([...entries, { entry: guestEntry }]);
     setGuestEntry('');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     handleUpdating();
-    const newEntry = { name: name, entry: guestEntry };
+    const newEntry = { name: user, entry: guestEntry };
     updateEntryList(newEntry);
   };
   const handleLogout = () => {
-    setUser('');
-    setName('');
+    logout();
   };
 
   const animation1 = useAnimation('elastic', 5000, 100);
