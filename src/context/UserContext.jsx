@@ -7,8 +7,9 @@ export const UserProvider = ({ children }) => {
 
   const login = (email, password) => {
     if (
-      email === process.env.REACT_APP_AUTH_EMAIL &&
-      password === process.env.REACT_APP_AUTH_PASSWORD
+      email === (process.env.REACT_APP_AUTH_EMAIL || userInfo.emailCheck) &&
+      password ===
+        (process.env.REACT_APP_AUTH_PASSWORD || userInfo.passwordCheck)
     ) {
       setUser(email);
       return true;

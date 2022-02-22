@@ -28,18 +28,13 @@ module.exports = {
   plugins: [
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanWebpackPlugin(),
-    new webpack.EnvironmentPlugin([
-      REACT_APP_SUPABASE_KEY,
-      REACT_APP_SUPABASE_URL,
-      REACT_APP_AUTH_EMAIL,
-      REACT_APP_AUTH_PASSWORD,
-    ]),
+    new webpack.EnvironmentPlugin(env),
     new CopyPlugin({
       patterns: [{ from: 'public' }],
     }),
-    // new webpack.DefinePlugin({
-    //   // process: { env: {} },
-    // }),
+    new webpack.DefinePlugin({
+      process: { env: {} },
+    }),
     new webpack.ProvidePlugin({
       React: 'react',
     }),
