@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from 'react';
+import userInfo from '../utils/settings';
 
 const UserContext = createContext();
 export const UserProvider = ({ children }) => {
@@ -6,8 +7,8 @@ export const UserProvider = ({ children }) => {
 
   const login = (email, password) => {
     if (
-      email === process.env.REACT_APP_AUTH_EMAIL &&
-      password === process.env.REACT_APP_AUTH_PASSWORD
+      email === (process.env.REACT_APP_AUTH_EMAIL || userInfo.email) &&
+      password === (process.env.REACT_APP_AUTH_PASSWORD || userInfo.password)
     ) {
       setUser(email);
       return true;
