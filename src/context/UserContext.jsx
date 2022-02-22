@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
       setUser(email);
       return true;
     } else {
-      throw new Error(' you password and email dont match');
+      return false;
     }
   };
   const logout = () => {

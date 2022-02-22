@@ -2,18 +2,22 @@ import React from 'react';
 import style from './Login.css';
 import { useState } from 'react';
 import { useUser } from '../../context/UserContext';
+import { useHistory } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
   const { user, login, logout } = useUser();
+  console.log(user);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login(email, password);
-    console.log(user);
+    const successfulLogin = login(email, password);
+    !successfulLogin
+      ? alert('you user name and password dont match')
+      : history.replace('/');
   };
-
   return (
     <div className={style.loginForm}>
       <form
