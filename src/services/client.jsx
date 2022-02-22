@@ -1,9 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../utils/settings';
 
 console.log('LOOK HERER~!', process.env.REACT_APP_SUPABASE_URL);
 export const client = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_KEY
+  process.env.REACT_APP_SUPABASE_URL || supabase.URL,
+  process.env.REACT_APP_SUPABASE_KEY || supabase.KEY
 );
 
 export function checkError({ data, error }) {
