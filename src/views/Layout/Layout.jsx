@@ -17,8 +17,11 @@ export default function Layout() {
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRoute path="/">
+          <PrivateRoute path="/home">
             <Home />
+          </PrivateRoute>
+          <PrivateRoute path="/">
+            <div>root</div>
           </PrivateRoute>
         </Switch>
       </BrowserRouter>
