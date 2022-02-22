@@ -10,7 +10,6 @@ export default function Login() {
   const history = useHistory();
   const location = useLocation();
   const { login } = useUser();
-  console.log(location.state);
 
   const handleLogin = (e) => {
     e.preventDefault();
