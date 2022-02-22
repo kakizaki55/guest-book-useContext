@@ -17,9 +17,6 @@ export default function Layout() {
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRoute path="/home">
-            <Home />
-          </PrivateRoute>
           <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
